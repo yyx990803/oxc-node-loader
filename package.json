@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "oxc-transform": "^0.16.3"
+  },
+  "scripts": {
+    "test": "node --import ./oxc-register.js --enable-source-maps test.ts"
+  },
+  "packageManager": "pnpm@9.4.0"
+}
