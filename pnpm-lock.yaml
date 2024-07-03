@@ -11,9 +11,6 @@ importers:
       oxc-transform:
         specifier: ^0.16.3
         version: 0.16.3
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
 
 packages:
 
@@ -57,19 +54,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  js-tokens@4.0.0:
-    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
-
-  loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
-
   oxc-transform@0.16.3:
     resolution: {integrity: sha512-0VzI9MtIdsU46G73qCo+tIHP9sO+Ok8a68htz80eX0+aROONEKcCzJcyRXrJo0NBtiaD4Gx+GqbhthfZdJxDgw==}
-
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
-    engines: {node: '>=0.10.0'}
 
 snapshots:
 
@@ -97,12 +83,6 @@ snapshots:
   '@oxc-transform/binding-win32-x64-msvc@0.16.3':
     optional: true
 
-  js-tokens@4.0.0: {}
-
-  loose-envify@1.4.0:
-    dependencies:
-      js-tokens: 4.0.0
-
   oxc-transform@0.16.3:
     optionalDependencies:
       '@oxc-transform/binding-darwin-arm64': 0.16.3
@@ -113,7 +93,3 @@ snapshots:
       '@oxc-transform/binding-linux-x64-musl': 0.16.3
       '@oxc-transform/binding-win32-arm64-msvc': 0.16.3
       '@oxc-transform/binding-win32-x64-msvc': 0.16.3
-
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0

@@ -3,6 +3,15 @@ import { transform } from 'oxc-transform'
 
 const extensionsRegex = /\.tsx?$/
 
+// TODO use oxc-resolver & respect tsconfig.json
+// export async function resolve(specifier, context, nextResolve) {
+//   console.log(specifier, context)
+//   if (extensionsRegex.test(context.parentURL)) {
+
+//   }
+//   return nextResolve(specifier, context)
+// }
+
 export async function load(url, context, nextLoad) {
   if (extensionsRegex.test(url)) {
     const { source: rawSource } = await nextLoad(url, {
@@ -16,14 +25,12 @@ export async function load(url, context, nextLoad) {
       { sourcemap: true }
     )
 
+    // TODO this should be handled by oxc with an inline sourcemap option
     const mapString = JSON.stringify(map)
-
     const sourceWithMap =
       transformedSource +
       `\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,` +
       Buffer.from(mapString).toString('base64')
-
-    console.log(transformedSource)
 
     return {
       format: 'module',
